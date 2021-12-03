@@ -1,0 +1,6 @@
+{
+    "name": "chat",
+    "modules": [
+        "core/chat"
+    ]
+}

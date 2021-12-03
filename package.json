@@ -1,0 +1,27 @@
+{
+  "name": "@leiash/cli",
+  "version": "1.0.0",
+  "main": "bin/index.js",
+  "author": "Bas Wilson",
+  "license": "GPL-3.0",
+  "bin": {
+    "leia": "bin/index.js"
+  },
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leia/cli",
+    "directory": ""
+  },
+  "keywords": [
+    "leiash",
+    "leia.sh",
+    "cli"
+  ],
+  "dependencies": {
+    "fs-extra": "^10.0.0",
+    "keytar": "^7.7.0",
+    "yargs": "^17.3.0",
+    "yargs-interactive": "^3.0.0"
+  }
+}
