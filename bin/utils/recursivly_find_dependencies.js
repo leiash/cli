@@ -24,6 +24,7 @@ module.exports = (config) => {
         const module = config.modules[i];
         if (!fs.existsSync(`${modulesPath}/${module}`)) throw new Error("Trying to load non-existent module");
         const moduleConfig = loadConfig(module);
+        console.log(moduleConfig)
         findDependencies(moduleConfig);
     }
 

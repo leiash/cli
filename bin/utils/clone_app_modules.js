@@ -19,6 +19,6 @@ module.exports = function (config) {
 
         fs.ensureDirSync(`${tempAppPath}/src/modules/${module}`)
         fs.copySync(`${modulesDir}/${module}/leia-config.json`, `${tempAppPath}/src/modules/${module}/leia-config.json`, {});
-        fs.copySync(`${modulesDir}/${module}/src`, `${tempAppPath}/src/modules/${module}/src`, {});
+        fs.copySync(`${modulesDir}/${module}`, `${tempAppPath}/src/modules/${module}`, {});
     }
 }

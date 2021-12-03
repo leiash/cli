@@ -8,6 +8,7 @@ const copy_app_base = require("./utils/copy_app_base");
 const clone_and_copy_app_modules = require("./utils/clone_app_modules");
 const load_config = require("./utils/load_config");
 const generate_imports_file = require("./utils/generate_imports_file");
+const generate_env_file = require("./utils/generate_env_file");
 const install_dependencies = require("./utils/install_dependencies");
 const move_app = require("./utils/move_app");
 const path = require("path");
@@ -16,24 +17,32 @@ const remove_temp = require("./utils/remove_temp");
 
 // methods
 function generateApp(name, dir, template) {
-    console.log(`Generating new Leia app "${name}" at ${dir} using the ${template} template`);
-    const templateName = template.split(" ")[0];
-    validate_generation(name, dir, templateName);
-    prepare_temp();
 
-    const config = load_config(templateName);
-    copy_app_base();
-    clone_and_copy_app_modules(config);
-    generate_imports_file(config);
-    install_dependencies();
-    move_app(dir, name);
-    remove_temp();
+    try {
+        console.log(`Generating new Leia app "${name}" at ${dir} using the ${template} template`);
+        const templateName = template.split(" ")[0];
+        validate_generation(name, dir, templateName);
+        prepare_temp();
 
-    console.log(`
+        const config = load_config(templateName);
+        copy_app_base();
+        clone_and_copy_app_modules(config);
+        generate_env_file(config);
+        generate_imports_file(config);
+        install_dependencies();
+        move_app(dir, name);
+
+        console.log(`
     Your app has been generated! 
     
     To start your app use 'cd ${path.join(dir, name)}' and 'leia start' or 'leia start dev'
     `)
+    } catch (error) {
+        console.error(error);
+    } finally {
+        remove_temp();
+    }
+
 }
 
 function generateModule(name) {
@@ -173,7 +182,8 @@ function interactiveAppGeneration() {
                 describe: "What template would you like to base your app off?",
                 choices: [
                     "clean (barebones config with no modules)",
-                    "chat (template for a full chat application)",
+                    "users (basic backend with support for authentication and users)",
+                    // "chat (template for a full chat application)",
                     // "social-media (template for a social media platform)",
                     // "blog (template for an easy blog)"
                 ]
