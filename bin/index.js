@@ -84,12 +84,12 @@ yargs.command(
     }
 )
 
-// Generate app command
+// new app command
 yargs.command(
     {
-        command: "generate:app [name] [directory]",
+        command: "new:app [name] [directory]",
         help: true,
-        describe: "Generates a new Leia app locally",
+        describe: "Creates a new Leia app locally",
         builder: (yargs) => {
             return yargs.positional("name", {
                 describe: "Name of your Leia app"
@@ -111,7 +111,7 @@ yargs.command(
 // Generate new module
 yargs.command(
     {
-        command: "generate:module [name]",
+        command: "new:module [name]",
         help: true,
         describe: "Generates a new module locally",
         builder: (yargs) => {
