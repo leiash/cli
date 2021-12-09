@@ -181,11 +181,8 @@ function interactiveAppGeneration() {
                 type: "list",
                 describe: "What template would you like to base your app off?",
                 choices: [
-                    "clean (barebones config with no modules)",
-                    "users (basic backend with support for authentication and users)",
-                    // "chat (template for a full chat application)",
-                    // "social-media (template for a social media platform)",
-                    // "blog (template for an easy blog)"
+                    "core (barebones backend with all core modules)",
+                    "coinflip (coinflip module)"
                 ]
             }
         }).then(result => {

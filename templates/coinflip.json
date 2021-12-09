@@ -1,0 +1,6 @@
+{
+    "name": "coinflip",
+    "modules": [
+        "games/coinflip"
+    ]
+}

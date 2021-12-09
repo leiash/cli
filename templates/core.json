@@ -1,0 +1,14 @@
+{
+    "name": "core",
+    "modules": [
+        "core/users",
+        "core/auth",
+        "core/assets",
+        "core/bank",
+        "core/functions",
+        "core/health",
+        "core/locks",
+        "core/notifications",
+        "core/rooms"
+    ]
+}
