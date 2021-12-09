@@ -1,6 +1,6 @@
 {
   "name": "@leiash/cli",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "bin/index.js",
   "author": "Bas Wilson",
   "license": "GPL-3.0",
