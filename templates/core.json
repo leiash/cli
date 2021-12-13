@@ -9,6 +9,7 @@
         "core/health",
         "core/locks",
         "core/notifications",
+        "core/documents",
         "core/rooms"
     ]
 }
